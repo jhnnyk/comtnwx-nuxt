@@ -1,8 +1,10 @@
 <template>
-  <div class="container">
+  <div class="text-gray-700">
     <TitleBar />
-    <MtnList />
-    <Nuxt />
+    <main class="container flex flex-row p-6">
+      <MtnList />
+      <Nuxt />
+    </main>
   </div>
 </template>
 
