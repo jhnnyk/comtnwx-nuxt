@@ -2,6 +2,7 @@ import { db } from '../firebase'
 
 export const state = () => ({
   all: [],
+  currentMtn: null,
 })
 
 export const getters = {
@@ -26,6 +27,9 @@ export const mutations = {
   setMtns: (state, mtnList) => {
     state.all = mtnList
   },
+  setCurrentMtn: (state, mtn) => {
+    state.currentMtn = mtn
+  },
 }
 
 export const actions = {
@@ -43,5 +47,10 @@ export const actions = {
     })
 
     commit('setMtns', mtnList)
+  },
+
+  getCurrentMtn: async ({ commit, state }, slug) => {
+    const currentMtn = await state.all.find((m) => m.slug === slug)
+    commit('setCurrentMtn', currentMtn)
   },
 }
