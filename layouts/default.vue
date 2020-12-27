@@ -12,5 +12,9 @@ export default {
   components: {
     TitleBar,
   },
+
+  async created() {
+    await this.$store.dispatch('mtns/getMtns')
+  },
 }
 </script>
