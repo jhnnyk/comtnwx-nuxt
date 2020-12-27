@@ -24,7 +24,7 @@ export default {
     },
   },
 
-  async created() {
+  async fetch() {
     await this.$store.dispatch('mtns/getMtns')
 
     if (this.$route.params.slug) {
