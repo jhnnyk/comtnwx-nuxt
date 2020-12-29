@@ -24,3 +24,12 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss">
+a {
+  @apply text-indigo-900;
+  &:hover {
+    @apply underline;
+  }
+}
+</style>
