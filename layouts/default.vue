@@ -18,7 +18,7 @@ export default {
     MtnList,
   },
 
-  async created() {
+  async fetch() {
     // get all mountains
     await this.$store.dispatch('mtns/getMtns')
   },

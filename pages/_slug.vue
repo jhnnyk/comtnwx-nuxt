@@ -20,6 +20,10 @@
 import { mapState } from 'vuex'
 
 export default {
+  async fetch() {
+    await this.$store.dispatch('mtns/getCurrentMtn', this.$route.params.slug)
+  },
+
   computed: {
     ...mapState('mtns', {
       selectedMtn: (state) => state.currentMtn,
@@ -28,17 +32,8 @@ export default {
     }),
   },
 
-  watch: {
-    $route() {
-      this.$store.dispatch('mtns/getCurrentMtn', this.$route.params.slug)
-    },
-  },
-
-  async created() {
-    // get all mountains
-    await this.$store.dispatch('mtns/getMtns')
-
-    this.$store.dispatch('mtns/getCurrentMtn', this.$route.params.slug)
+  created() {
+    this.$fetch()
   },
 }
 </script>
