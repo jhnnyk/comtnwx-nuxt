@@ -9,7 +9,14 @@
       <div v-if="forecastLoading">... loading weather forecast ...</div>
       <div v-else>
         <div v-for="(period, index) in forecast" :key="index">
-          {{ period.name }}
+          <p>{{ period.name }} - {{ period.shortForecast }}</p>
+          <p>
+            <span>{{ period.temperature }}</span
+            >º {{ period.temperatureUnit }}<br />
+            Wind: {{ period.windSpeed }}
+          </p>
+          <img :src="period.icon" :alt="period.shortForecast" />
+          <p>{{ period.detailedForecast }}</p>
         </div>
       </div>
     </div>
