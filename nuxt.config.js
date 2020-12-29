@@ -17,13 +17,6 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      {
-        'data-ad-client': 'ca-pub-6324755176840166',
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-        async: true,
-      },
-    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
