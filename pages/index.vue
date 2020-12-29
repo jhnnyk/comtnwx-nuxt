@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <p>
+  <div class="text-center p-8">
+    <h2 class="text-3xl">
       Welcome to
-      <nuxt-link :to="{ name: 'index' }">ColoradoMountainWeather.com</nuxt-link
-      >, the most accurate weather forecast for Colorado's 14ers.
-    </p>
+      <nuxt-link :to="{ name: 'index' }">ColoradoMountainWeather.com</nuxt-link>
+    </h2>
+    <p>the most accurate weather forecast for Colorado's 14ers</p>
     <p>
       Please select a mountain to see the current weather and the weather
       forecast.
@@ -20,3 +20,9 @@
 <script>
 export default {}
 </script>
+
+<style lang="postcss" scoped>
+p {
+  @apply mb-4;
+}
+</style>
