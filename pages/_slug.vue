@@ -20,7 +20,7 @@
           <p class="text-indigo-900 font-bold">
             {{ period.name }} - {{ period.shortForecast }}
           </p>
-          <div class="flex flex-row">
+          <div class="flex flex-row flex-wrap md:flex-nowrap">
             <p class="flex-none w-36 text-center pt-3">
               <span class="text-6xl">{{ period.temperature }}</span>
               <span class="text-lg relative -top-7 right-1"
