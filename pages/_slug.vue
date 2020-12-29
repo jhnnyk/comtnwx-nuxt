@@ -62,5 +62,18 @@ export default {
   created() {
     this.$fetch()
   },
+
+  head() {
+    return {
+      title: this.selectedMtn.name + ' - Colorado Mountain Weather',
+      meta: [
+        {
+          hid: this.selectedMtn.slug,
+          name: 'description',
+          content: 'weather forecast for ' + this.selectedMtn.name,
+        },
+      ],
+    }
+  },
 }
 </script>
