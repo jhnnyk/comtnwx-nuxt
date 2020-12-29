@@ -1,22 +1,42 @@
 <template>
   <div class="mtn-info">
     <div v-if="selectedMtn" class="p-4">
-      <h1 class="text-indigo-900 text-5xl">{{ selectedMtn.name }}</h1>
-      <p>{{ selectedMtn.range }}</p>
-      <p>{{ selectedMtn.el }} ft.</p>
+      <h1 class="text-indigo-900 text-5xl text-center">
+        {{ selectedMtn.name }}
+      </h1>
+      <p class="text-center text-sm uppercase">{{ selectedMtn.range }}</p>
+      <p class="text-center text-sm uppercase">{{ selectedMtn.el }} ft.</p>
 
-      <h2>{{ selectedMtn.name }} Weather Forecast</h2>
+      <h2 class="text-3xl text-indigo-900 text-center pt-6">
+        {{ selectedMtn.name }} Weather Forecast
+      </h2>
       <div v-if="forecastLoading">... loading weather forecast ...</div>
       <div v-else>
-        <div v-for="(period, index) in forecast" :key="index">
-          <p>{{ period.name }} - {{ period.shortForecast }}</p>
-          <p>
-            <span>{{ period.temperature }}</span
-            >º {{ period.temperatureUnit }}<br />
-            Wind: {{ period.windSpeed }}
+        <div
+          v-for="(period, index) in forecast"
+          :key="index"
+          class="rounded-2xl shadow-xl p-4 mb-6"
+        >
+          <p class="text-indigo-900 font-bold">
+            {{ period.name }} - {{ period.shortForecast }}
           </p>
-          <img :src="period.icon" :alt="period.shortForecast" />
-          <p>{{ period.detailedForecast }}</p>
+          <div class="flex flex-row">
+            <p class="flex-none w-36 text-center pt-3">
+              <span class="text-6xl">{{ period.temperature }}</span>
+              <span class="text-lg relative -top-7 right-1"
+                >º {{ period.temperatureUnit }}</span
+              >
+              <br />
+              <span class="text-xs uppercase">Wind:</span
+              ><span class="font-bold">{{ period.windSpeed }}</span>
+            </p>
+            <img
+              :src="period.icon"
+              :alt="period.shortForecast"
+              class="flex-none object-scale-down w-28"
+            />
+            <p class="pt-4">{{ period.detailedForecast }}</p>
+          </div>
         </div>
       </div>
     </div>
