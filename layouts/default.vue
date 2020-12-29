@@ -18,18 +18,9 @@ export default {
     MtnList,
   },
 
-  async fetch() {
+  async created() {
+    // get all mountains
     await this.$store.dispatch('mtns/getMtns')
-
-    if (this.$route.params.slug) {
-      this.$store.dispatch('mtns/getCurrentMtn', this.$route.params.slug)
-    }
-  },
-
-  watch: {
-    $route() {
-      this.$store.dispatch('mtns/getCurrentMtn', this.$route.params.slug)
-    },
   },
 }
 </script>

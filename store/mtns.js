@@ -46,6 +46,7 @@ export const actions = {
     const snapshot = await db.collection('spots').orderBy('el', 'desc').get()
 
     if (snapshot.empty) {
+      // eslint-disable-next-line
       console.log('No matching documents')
       return
     }
@@ -89,6 +90,7 @@ export const actions = {
           forecastURL,
         })
       } catch (error) {
+        // eslint-disable-next-line
         console.log(error)
       }
     }
