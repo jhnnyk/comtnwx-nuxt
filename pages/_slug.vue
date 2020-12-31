@@ -39,6 +39,14 @@
           </div>
         </div>
       </div>
+      <p class="mt-4">
+        For more information about {{ selectedMtn.name }}, including route
+        information for climbing {{ selectedMtn.name }} and latest trail
+        conditions and trip reports, check
+        <a :href="selectedMtn['14ersLink']" target="_blank"
+          >{{ selectedMtn.name }} page on 14ers.com</a
+        >.
+      </p>
     </div>
   </div>
 </template>
