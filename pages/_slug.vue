@@ -4,8 +4,13 @@
       <h1 class="text-indigo-900 text-5xl text-center">
         {{ selectedMtn.name }}
       </h1>
-      <p class="text-center text-sm uppercase">{{ selectedMtn.range }}</p>
-      <p class="text-center text-sm uppercase">{{ selectedMtn.el }} ft.</p>
+      <p class="text-center">
+        <span class="text-xs uppercase">Range:</span> {{ selectedMtn.range }}
+      </p>
+      <p class="text-center">
+        <span class="text-xs uppercase">Elevation:</span>
+        {{ selectedMtn.el }} ft.
+      </p>
 
       <h2 class="text-3xl text-indigo-900 text-center pt-6">
         {{ selectedMtn.name }} Weather Forecast
