@@ -11,6 +11,11 @@
         <span class="text-xs uppercase">Elevation:</span>
         {{ selectedMtn.el }} ft.
       </p>
+      <p
+        v-if="selectedMtn.description"
+        v-html="selectedMtn.description"
+        class="text-center text-sm mt-4"
+      ></p>
 
       <h2 class="text-3xl text-indigo-900 text-center pt-6">
         {{ selectedMtn.name }} Weather Forecast
